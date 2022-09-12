@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <title>Vigilix View testing - Android/iOS Manager Application</title>
+  </head>
+
+  <body bgcolor="bisque">
+    <h1><font color="blue">Vigilix Link testing</font></h1>
+    <hr />
+    <h3>Instructions</h3>
+    <p>
+      Copy and paste the master copy of the HTML file to your control machine,
+      open the index file and edit the items below, save and open in a browser.
+      Select each link and ensure a view session opens via the Manager
+      application.....
+    </p>
+
+    <h3>Links</h3>
+    <p>
+      <b>View a Client using the TCP Protocol via IP Address and Hostname:</b
+      ><br />
+      <a href="nsm://client/view?tr=TCP&cl=HOSTNAME">View via TCP Hostname</a
+      ><br /><!--Amend HOSTNAME to the Hostname of your Test Client-->
+      <a href="nsm://client/view?tr=TCP&cl=DONKEY2"
+        >View via TCP Hostname (Invalid) - Tries to connect to a machine named
+        "Donkey2"</a
+      ><br />
+      <a href="nsm://client/view?tr=TCP&cl=>192.168.1.105&dn=choochoos%20PC"
+        >View via TCP IP Address</a
+      ><br /><!--Amend the 10.20.0.83 to the IP Address of your Test Client-->
+      <a href="nsm://client/view?tr=TCP&cl=>192.168.1.105&dn=choochoos%20PC"
+        >View via TCP IP Address with displayname choochoos PC</a
+      ><br /><!--Amend the 10.20.0.83 to the IP Address of your Test Client-->
+      <a href="nsm://client/view?tr=TCPIP&cl>10.20.10.14"
+        >View via TCP IP Address (Invalid)</a
+      ><br /><br />
+
+      <b>View a Client using the HTTP Protocol without an Operator:</b
+      ><br /><!-- GSK has to use URL Enoding for none 0-Z Characters (I.e. @=%40 <=%3C ?=%3F ==%3D) -->
+      First link will connect to a client via HTTP (gateway) using a client
+      hostname, second link will fail as client hostname Donkey2 cannot be
+      found<br />
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>10.20.1.160&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=LinuxStudent4"
+        >View via HTTP Gateway IP Address and Client Hostname</a
+      ><br /><!-- Amend the GW IP Address, GSK (Encrypted Security Key - Testing123), Client Hostname -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>10.20.1.160&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=Donkey2"
+        >View via HTTP Gateway IP Address and Client Hostname (Invalid)</a
+      ><br /><!-- Amend the GW IP Address, GSK (Encrypted Security Key - Testing123), Client Hostname -->
+      <br /><br />
+      First link will connect to a client via HTTP (gateway IP address) using a
+      client ip address, second link will fail as client IP address cannot be
+      found<br />
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>10.20.1.160&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=>10.20.1.83"
+        >View via HTTP Gateway IP Address and Client IP Address</a
+      ><br /><!-- Amend the GW IP Address, GSK (Encrypted Security Key - Testing123), Client IP Address -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>81.174.251.94:3085&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=>192.168.1.105"
+        >View via HTTP Gateway IP Address and Client IP Address
+        (DITTAS-LATITUDE)</a
+      ><br /><!-- Amend the GW IP Address, GSK (Encrypted Security Key - Testing123), Client IP Address -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>81.174.251.94:3085&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=>10.211.55.3"
+        >View via HTTP Gateway IP Address and Client IP Address (Ditta's
+        Monterey)</a
+      ><br /><!-- Amend the GW IP Address, GSK (Encrypted Security Key - Testing123), Client IP Address -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>10.20.1.160&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=>100.200.1.0"
+        >View via HTTP Gateway IP Address and Client IP Address (Invalid)</a
+      ><br /><!-- Amend the GW IP Address, GSK (Encrypted Security Key - Testing123), Client IP Address -->
+      <br /><br />
+      First link will connect to a client via HTTP (gateway hostname) using the
+      client hostname, second link will fail as it is an invalid hostname<br />
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>tjmVm7.nsltest.local&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=LinuxTutor"
+        >View via HTTP Gateway Hostname and Client Hostname</a
+      ><br /><!-- Amend the GW DNS Name, GSK (Encrypted Security Key - Testing123), Client Hostname -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>tjmVm7.nsltest.local&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=Donkey2"
+        >View via HTTP Gateway Hostname and Invalid Client Hostname (Invalid)</a
+      ><br /><!-- Amend the GW DNS Name, GSK (Encrypted Security Key - Testing123), Client Hostname -->
+      <br /><br />
+      First link will connect to a client via HTTP (gateway hostname) using the
+      client ip address, second link will fail as it is an invalied ip
+      address<br />
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>tjmVm7.nsltest.local&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=>10.20.1.52"
+        >View via HTTP Gateway Hostname and Client IP Address</a
+      ><br /><!-- Amend the GW DNS Name, GSK (Encrypted Security Key - Testing123), Client IP Address -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>tjmVm7.nsltest.local&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=>100.200.1.0"
+        >View via HTTP Gateway Hostname and Invalid Client IP Address
+        (Invalid)</a
+      ><br /><br /><!-- Amend the GW DNS Name, GSK (Encrypted Security Key - Testing123), Client IP Address -->
+
+      <b>View a Client using the HTTP Protocol with an Operator and Password:</b
+      ><br /><!-- GSK and Pass has to use URL Enoding for none 0-Z Characters (I.e. @=40 <=%3C ?=%3F ==%3D) -->
+      <a
+        href="nsm://client/view?tr=HTTP&cl=RR-HP&gw=>10.20.10.169&gsk=GK%3CMAGFG%3BL%40GDL%3AE%3DF&user=HK%3EICCHG%3BI&pass=HJ%3DFBNHC%3DKBJGL%3BP%3FA&mac="
+        >View via HTTP Gateway IP Address and Client name (gateway: 10.20.10.69, client: RR-HP)</a
+      ><br /><!-- gateway: 10.20.10.169, gateway key: agentkey1, client: RR-HP, operator: user1 password: password1 -->
+      <a
+        href="nsm://client/view?tr=HTTP&cl=DESKTOP-KO97RPG&gw=>10.20.10.169&gsk=GK%3CMAGFG%3BL%40GDL%3AE%3DG&user=HK%3EICCHG%3BJ&pass=%3AJAFHN%40CGK%3EJEL%3BP%3FB&mac="
+        >View via HTTP Gateway IP Address and Client name (gateway: 10.20.10.69, client: DESKTOP-KO97RPG)</a
+      ><br /><!-- gateway: 10.20.10.169, gateway key: agentkey1, client: DESKTOP-KO97RPG, operator: user2 password: password2 -->
+      <a
+        href="nsm://client/view?tr=HTTP&cl=>10.20.10.130&gw=>10.20.10.169&gsk=GK%3CMAGFG%3BL%40GDL%3AE%3DG&user=HK%3EICCHG%3BJ&pass=%3AJAFHN%40CGK%3EJEL%3BP%3FB&mac="
+        >View via HTTP Gateway IP Address and Client name (gateway: 10.20.10.69, client: 10.20.10.130)</a
+      ><br /><!-- gateway: 10.20.10.169, gateway key: agentkey1, client: 10.20.10.130, operator: user2 password: password2 -->
+      <a
+        href="nsm://client/view?tr=HTTP&cl>10.20.10.49&gn=tom&gw=>10.20.10.165&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B"
+        >View via HTTP Gateway IP Address and Client Hostname (bad)</a
+      ><br /><!-- Amend the GW IP Address, GSK (Encrypted Security Key - Testing123), Client Hostname, Operator and Password (Encrypted - test) -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>192.168.1.105:3085&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=DITTAS-LATITUDE&user=HI%3DICAHG&pass=HI%3DICAHG&dn=Jeronimos%20Macbook"
+        >View via HTTP Gateway IP Address and Client Hostname (DITTAS-LATITUDE - test - test, display name: Jeronimos Macbook)</a
+      ><br /><!-- Amend the GW IP Address, GSK (Encrypted Security Key - Testing123), Client Hostname, Operator and Password (Encrypted - test) -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>192.168.1.105:3085&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=DITTAS-LATITUDE&user=HK%3EICCHG%3BI&pass=HJ%3DFBNHC%3DKBJGL%3BP%3FA"
+        >View via HTTP Gateway IP Address and Client Hostname (DITTAS-LATITUDE - user1 - password1)</a
+      ><br /><!-- Amend the GW IP Address, GSK (Encrypted Security Key - Testing123), Client Hostname, Operator and Password (Encrypted - user1, password1) -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>192.168.1.105:3085&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=DITTAS-LATITUDE&user=HI%3DICAHG&pass=HI%3DICAHG"
+        >View via HTTP Gateway IP Address and Client Hostname (DITTAS-LATITUDE)</a
+      ><br /><!-- Amend the GW IP Address, GSK (Encrypted Security Key - Testing123), Client Hostname, Operator and Password (Encrypted - test) -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>10.20.1.160&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=JD1&user=HI%3DICAHG&pass=HI%3DICAHG"
+        >View via HTTP Gateway IP Address and Client Hostname</a
+      ><br /><!-- Amend the GW IP Address, GSK (Encrypted Security Key - Testing123), Client Hostname, Operator and Password (Encrypted - test) -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>10.20.1.160&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=127.0.0.1&user=HI%3DICAHG&pass=HI%3DICAHG"
+        >View via HTTP Gateway IP Address and Client IP Address</a
+      ><br /><!-- Amend the GW IP Address, GSK (Encrypted Security Key - Testing123), Client IP Address, Operator and Password (Encrypted - test) -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>tjmVm7.nsltest.local&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=JD1&user=HI%3DICAHG&pass=HI%3DICAHG"
+        >View via HTTP Gateway Hostname and Client Hostname</a
+      ><br /><!-- Amend the GW DNS Name, GSK (Encrypted Security Key - Testing123), Client Hostname, Operator and Password (Encrypted - test) -->
+      <a
+        href="nsm://client/view?tr=HTTP&gw=>tjmVm7.nsltest.local&gsk=HO%3DOCGHM%3DGBEFL9M%3CO%40B&cl=>127.0.0.1&user=HI%3DICAHG&pass=HI%3DICAHG"
+        >View via HTTP Gateway Hostname and Client IP Address</a
+      ><br /><br /><!-- Amend the GW DNS Name, GSK (Encrypted Security Key - Testing123), Client IP Address, Operator and Password (Encrypted - test) -->
+    </p>
+    <hr />
+  </body>
+</html>
